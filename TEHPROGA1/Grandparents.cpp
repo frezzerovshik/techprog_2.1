@@ -32,13 +32,13 @@ Grandparents::Grandparents(string _fio, string _parents,string _spouse,string _k
 Grandparents::Grandparents( Grandparents& init){
     cout<<"Constructor of copying"<<endl;
     cout<<"Class Grandparents"<<endl;
-    setFio(init.getFio());
-    setParents(init.getParents());
-    setSpouse(init.getSpouse());
-    setKids(init.getKids());
-    setBirth(init.getBirth());
-    setDeath(init.getDeath());
-    setAge(init.getAge());
+    setFio(*init.getFio());
+    setParents(*init.getParents());
+    setSpouse(*init.getSpouse());
+    setKids(*init.getKids());
+    setBirth(*init.getBirth());
+    setDeath(*init.getDeath());
+    setAge(*init.getAge());
     if(init.getType().compare("Grandparents") || init.getType().compare("grandparents")){
         type = init.getType();
     }

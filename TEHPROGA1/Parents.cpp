@@ -33,13 +33,13 @@ Parents::Parents(string _fio, string _parents,string _spouse,string _kids,string
 Parents::Parents( Parents& init){
     cout<<"Constructor of copying"<<endl;
     cout<<"Class Parents"<<endl;
-    setFio(init.getFio());
-    setParents(init.getParents());
-    setSpouse(init.getSpouse());
-    setKids(init.getKids());
-    setBirth(init.getBirth());
-    setDeath(init.getDeath());
-    setAge(init.getAge());
+    setFio(*init.getFio());
+    setParents(*init.getParents());
+    setSpouse(*init.getSpouse());
+    setKids(*init.getKids());
+    setBirth(*init.getBirth());
+    setDeath(*init.getDeath());
+    setAge(*init.getAge());
     if(init.getType().compare("Parents") || init.getType().compare("parents")){
         type = init.getType();
     }

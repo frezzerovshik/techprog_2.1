@@ -26,11 +26,11 @@ public:
     void setDeath(string _death){Base::setDeath(_death);}
     void setAge(string _age){Base::setAge(_age);}
     string getType(){return type;}
-    string getFio(){return Base::getFio();}
-    string getSpouse(){return Base::getSpouse();}
-    string getKids(){return Base::getKids();}
-    string getBirth(){return Base::getBirth();}
-    string getP(){return Base::getParents();}
-    string getDeath(){return Base::getDeath();}
-    string getAge(){return Base::getAge();}
+    string* getFio(){return Base::getFio();}
+    string* getSpouse(){return Base::getSpouse();}
+    string* getKids(){return Base::getKids();}
+    string* getBirth(){return Base::getBirth();}
+    string* getParents(){return Base::getParents();}
+    string* getDeath(){return Base::getDeath();}
+    string* getAge(){return Base::getAge();}
 };

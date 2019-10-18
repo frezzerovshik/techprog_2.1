@@ -7,23 +7,26 @@
 //
 
 #include "Functions.hpp"
+#include <string>
+#include <Curses.h>
 
+using namespace std;
 TEMP_DATA getDataFromKeyboard(){
     TEMP_DATA a;
     cout<<"Введите ФИО:"<<endl;
-    cin>>a.fio;
+    getline(cin, a.fio);
     cout<<"Введите информацию о родителях (если она не известна или их нет в живых, введите -):"<<endl;
-    cin>>a.parents;
+    getline(cin,a.parents);
     cout<<"Введите информацию о супруге:"<<endl;
-    cin>>a.spouse;
+    getline(cin, a.spouse);
     cout<<"Введите информацию о детях (если их нет, введите -):"<<endl;
-    cin>>a.kids;
+    getline(cin, a.kids);
     cout<<"Введите дату рождения:"<<endl;
-    cin>>a.birth;
+    getline(cin, a.birth);
     cout<<"Введите дату смерти (если есть):"<<endl;
-    cin>>a.death;
+    getline(cin, a.death);
     cout<<"Введите возраст:"<<endl;
-    cin>>a.age;
+    getline(cin, a.age);
     return a;
 }
 string getTypeWithTempStruct(TEMP_DATA var){
@@ -40,11 +43,29 @@ void printKeeper(Keeper& a){
     
 }
 int runtime(){
-    Keeper main_keeper;
-    unsigned short swc;
-    do{
-        cout<<"Меню:"<<endl<<"1 - считать фамильное дерево из файла"<<endl<<"2 - добавить в дерево"<<endl<<"3 - вывести дерево на экран"<<endl<<"4 - редактирование"<<"5 - сохранение в файл"<<endl<<"6 - выход"<<endl;
-        
-    }while(true);
-    return 0;
+    try {
+        MyArray<Parents> a;
+        Parents tmp;
+        string fio("Sharapov A.S.");
+        string age("Sharapov A.S.");
+        string kids("Sharapov A.S.");
+        string spouse("Sharapov A.S.");
+        string parents("Sharapov A.S.");
+        string birth("Sharapov A.S.");
+        string death("Sharapov A.S.");
+        tmp.setFio(fio);
+        tmp.setAge(age);
+        tmp.setKids(kids);
+        tmp.setSpouse(spouse);
+        tmp.setParents(parents);
+        tmp.setBirth(birth);
+        tmp.setDeath(death);
+        a.addAtIndex(0, tmp);
+        cout << "Hello from runtime func!" << endl;
+         return 0;
+    } catch (...) {
+        cout<<"Proizoshel trolling...";
+         return 0;
+    }
+  
 }

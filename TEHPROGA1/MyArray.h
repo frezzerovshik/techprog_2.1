@@ -9,17 +9,19 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "Exception.hpp"
 using namespace std;
 template <typename T>
 class MyArray {
     T *arr;
     unsigned short size;
-    fstream stream;
+    fstream stream_r;
+    ofstream stream_wr;
     Exception exc;
 public:
     MyArray();
-    MyArray(T *_arr , fstream _stream);
+    MyArray(T *_arr , fstream _stream,ofstream wr_str);
     MyArray(const MyArray& _init);
     ~MyArray();
     void addAtIndex(unsigned short _index, T _object);//+
@@ -39,21 +41,23 @@ MyArray<T>::MyArray(){
     size = 0;
 }
 template <typename T>
-MyArray<T>::MyArray(T *_arr, fstream _stream){
+MyArray<T>::MyArray(T *_arr, fstream _stream, ofstream wr_str){
     arr = _arr;
     size = _arr->getSize();
-    stream = _stream;
+    stream_r = _stream;
+    stream_wr = wr_str;
 }
 template <typename T>
 MyArray<T>::MyArray(const MyArray& _init){
     arr = _init.arr;
     size = _init.size;
-    stream = _init.stream;
+    stream_r = _init.stream;
 }
 template <typename T>
 MyArray<T>::~MyArray(){
     delete[] arr;
-    stream.close();
+    stream_r.close();
+    stream_wr.close();
 }
 template<typename T>
 //Element will be addet at the left sideof existed element with _index
@@ -92,7 +96,7 @@ void MyArray<T>::removeFromIndex(unsigned short _index){
     T *tmp_1 = new T[_index];
     T *tmp_2 = new T[size-_index-1];
     int i = 0;
-    while(arr[i]!=temp){
+    while(arr[i].getFio() != temp.getFio() && arr[i].getSpouse() != temp.getSpouse() && arr[i].getKids() != temp.getKids() && arr[i].getBirth() != temp.getBirth() && arr[i].getParents() != temp.getParents() && arr[i].getDeath() != temp.getDeath() && arr[i].getAge() != temp.getAge()){
         tmp_1[i] = arr[i];
         ++i;
     }
@@ -114,21 +118,47 @@ void MyArray<T>::removeFromEnd(){
 }
 template <typename T>
 void MyArray<T>::saveOnFile(string way){
-    if(stream.is_open()){
-        stream.close();
-        stream.open(way.c_str());
+    if(stream_wr.is_open()){
+        stream_wr.close();
+        stream_wr.open(way.c_str());
     }
     else
-        stream.open(way.c_str());
-    for(int i = 0;i<size;++i) stream<<arr[i];
+        stream_wr.open(way.c_str());
+    for (int i = 0; i < size; ++i) {
+        stream_wr << *(arr[i].getFio())<<endl;
+        stream_wr << *(arr[i].getSpouse())<<endl;
+        stream_wr << *(arr[i].getKids()) << endl;
+        stream_wr << *(arr[i].getBirth()) << endl;
+        stream_wr << *(arr[i].getParents()) << endl;
+        stream_wr << *(arr[i].getDeath()) << endl;
+        stream_wr << *(arr[i].getAge()) << endl;
+    }
 }
 template <typename T>
 void MyArray<T>::readFromFile(string way){
-    if(stream.is_open()){
-        stream.close();
-        stream.open(way.c_str());
+    if(stream_r.is_open()){
+        stream_r.close();
+        stream_r.open(way.c_str());
     }
     else
-        stream.open(way.c_str());
-    for(int i = 0;i<size;++i) stream>>arr[i];
+        stream_r.open(way.c_str());
+    string temp;
+    for (int i = 0; i < size; ++i) {
+        getline(stream_r, temp);
+        arr[i].setType(temp);
+        getline(stream_r, temp);
+        arr[i].setFio(temp);
+        getline(stream_r, temp);
+        arr[i].setParents(temp);
+        getline(stream_r, temp);
+        arr[i].setSpouse(temp);
+        getline(stream_r, temp);
+        arr[i].setKids(temp);
+        getline(stream_r, temp);
+        arr[i].setBirth(temp);
+        getline(stream_r, temp);
+        arr[i].setDeath( temp);
+        getline(stream_r, temp);
+        arr[i].setAge( temp);
+    }
 }

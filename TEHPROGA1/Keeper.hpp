@@ -16,7 +16,7 @@ class Keeper{
     MyArray<Grandparents> cont_g;
     MyArray<Kids> cont_k;
     Exception exc;
-    public:
+public:
     Keeper(){};
     Keeper( Keeper& init);
     Keeper(string way_p,string way_g,string way_k){cont_p.readFromFile(way_p);cont_g.readFromFile(way_g);cont_k.readFromFile(way_k);}
