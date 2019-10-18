@@ -13,6 +13,7 @@
 		324DEE3F2351F12A00DE12E6 /* Keeper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 324DEE392351F12A00DE12E6 /* Keeper.cpp */; };
 		324DEE452351F57D00DE12E6 /* Kids.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 324DEE432351F57D00DE12E6 /* Kids.cpp */; };
 		324DEE482351F59A00DE12E6 /* Parents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 324DEE462351F59A00DE12E6 /* Parents.cpp */; };
+		32A243952359FEF90095271F /* Functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A243932359FEF90095271F /* Functions.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,8 @@
 		324DEE462351F59A00DE12E6 /* Parents.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Parents.cpp; sourceTree = "<group>"; };
 		324DEE472351F59A00DE12E6 /* Parents.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Parents.hpp; sourceTree = "<group>"; };
 		32A243902359CE3F0095271F /* MyArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyArray.h; sourceTree = "<group>"; };
+		32A243932359FEF90095271F /* Functions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Functions.cpp; sourceTree = "<group>"; };
+		32A243942359FEF90095271F /* Functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Functions.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 		32A243922359F90B0095271F /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				32A243932359FEF90095271F /* Functions.cpp */,
+				32A243942359FEF90095271F /* Functions.hpp */,
 				324DEE392351F12A00DE12E6 /* Keeper.cpp */,
 				324DEE382351F12A00DE12E6 /* Keeper.hpp */,
 				324DEE412351F22600DE12E6 /* Exception.hpp */,
@@ -164,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				324DEE3C2351F12A00DE12E6 /* Base.cpp in Sources */,
+				32A243952359FEF90095271F /* Functions.cpp in Sources */,
 				324DEE3B2351F12A00DE12E6 /* Grandparents.cpp in Sources */,
 				324DEE292351F10B00DE12E6 /* main.cpp in Sources */,
 				324DEE482351F59A00DE12E6 /* Parents.cpp in Sources */,
