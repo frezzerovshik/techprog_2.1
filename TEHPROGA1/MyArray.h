@@ -49,7 +49,7 @@ MyArray<T>::MyArray(T *_arr, fstream _stream, ofstream wr_str){
 }
 template <typename T>
 MyArray<T>::MyArray(const MyArray& _init){
-    arr = _init.arr;
+    for (unsigned short i = 0;i<_init.size;++i) arr[i] = _init.arr[i];
     size = _init.size;
     stream_r = _init.stream;
 }
@@ -62,8 +62,10 @@ MyArray<T>::~MyArray(){
 template<typename T>
 //Element will be addet at the left sideof existed element with _index
 void MyArray<T>::addAtIndex(unsigned short _index, T _object){
-    if(_index>size-1 || _index<0)
+    if(size!=0){
+        if(_index>size-1 || _index<0)
         throw exc.out_of_bounds_ecx();
+    }
     T *tmp_1 = new T[_index];
     T *tmp_2 = new T[size - _index];
     for (int i = 0;i<_index;++i) tmp_1[i] = arr[i];

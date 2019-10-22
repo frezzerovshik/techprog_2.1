@@ -15,36 +15,187 @@ Keeper::Keeper( Keeper& init){
     for(int i = 0;i<cont_p.getSize();++i) cont_p.addAtIndex(i, init.cont_p.getItemFromIndex(i) );
     for(int i = 0;i<cont_g.getSize();++i) cont_g.addAtIndex(i, init.cont_g.getItemFromIndex(i) );
 }
-void Keeper::editing(string key_fiels, string key, string type){
-    if(type.compare("Parents") || type.compare("parents")){
-        if(key_fiels.compare("fio")||key_fiels.compare("FIO") || key_fiels.compare("Fio")){
-            for(int i = 0;i<cont_p.getSize();++i){
-                
+void Keeper::editing(){
+    cout<<"Объект какого класса хотите поменять?"<<endl<<"1 - Parents"<<endl<<"2 - Grandparents"<<endl<<"3 - Kids"<<endl;
+    unsigned short i = cin.get();
+    switch (i) {
+        case 1:{
+            cout<<"Какое поле хотите изменить?"<<endl<<"1 - ФИО"<<endl<<"2 - родители"<<endl<<"3 - супруги"<<endl<<"4 - дети"<<endl<<"5 дата рождения"<<endl<<"6 - дата смерти"<<endl<<"7 - возраст"<<endl;
+            unsigned short j = cin.get();
+            switch (j) {
+                case 1:{
+                    bool success = false;
+                    string src;
+                    cout<<"Введите искомое ФИО"<<endl;
+                    getline(cin,src);
+                    for(unsigned short k = 0;k<cont_p.getSize();++k){
+                        if(*cont_p.getItemFromIndex(k).getFio() == src){
+                            string temp;
+                            cout<<"Введите новое ФИО"<<endl;
+                            getline(cin,temp);
+                            cont_p.getItemFromIndex(k).setFio(temp);
+                            success = true;
+                        }
+                        else
+                            continue;
+                    }
+                    if(success==false)
+                        cout<<"Такой записи нет"<<endl;
+                    break;
+                }
+                case 2:{
+                    bool success = false;
+                    string src;
+                    cout<<"Введите искомые сведения в формате: Иванова А.А.,Иванов А.А."<<endl;
+                    getline(cin,src);
+                    for(unsigned short k = 0;k<cont_p.getSize();++k){
+                        if(*cont_p.getItemFromIndex(k).getParents() == src){
+                            string temp;
+                            cout<<"Введите новые сведения о родителях"<<endl;
+                            getline(cin,temp);
+                            cont_p.getItemFromIndex(k).setParents(temp);
+                            success = true;
+                        }
+                        else
+                            continue;
+                    }
+                    if(success==false)
+                        cout<<"Такой записи нет"<<endl;
+                    break;
+                }
+                case 3:{
+                    bool success = false;
+                    string src;
+                    cout<<"Введите искомые сведения в формате: Иванова А.А."<<endl;
+                    getline(cin,src);
+                    for(unsigned short k = 0;k<cont_p.getSize();++k){
+                        if(*cont_p.getItemFromIndex(k).getSpouse() == src){
+                            string temp;
+                            cout<<"Введите новые сведения о супруге"<<endl;
+                            getline(cin,temp);
+                            cont_p.getItemFromIndex(k).setSpouse(temp);
+                            success = true;
+                        }
+                        else
+                            continue;
+                    }
+                    if(success==false)
+                        cout<<"Такой записи нет"<<endl;
+                    break;
+                }
+                case 4:{
+                    bool success = false;
+                    string src;
+                    cout<<"Введите искомые сведения в формате: Иванова А.А.,Иванов А.А."<<endl;
+                    getline(cin,src);
+                    for(unsigned short k = 0;k<cont_p.getSize();++k){
+                        if(*cont_p.getItemFromIndex(k).getKids() == src){
+                            string temp;
+                            cout<<"Введите новые сведения о детях"<<endl;
+                            getline(cin,temp);
+                            cont_p.getItemFromIndex(k).setKids(temp);
+                            success = true;
+                        }
+                        else
+                            continue;
+                    }
+                    if(success==false)
+                        cout<<"Такой записи нет"<<endl;
+                    break;
+                }
+                case 5:{
+                    <#statements#>
+                    break;
+                }
+                case 6:{
+                    <#statements#>
+                    break;
+                }
+                case 7:{
+                    <#statements#>
+                    break;
+                }
+                default:
+                    break;
             }
+            break;
         }
-        if(key_fiels.compare("fio")||key_fiels.compare("FIO") || key_fiels.compare("Fio")){
-            
+        case 2:{
+            cout<<"Какое поле хотите изменить?"<<endl<<"1 - ФИО"<<endl<<"2 - родители"<<endl<<"3 - супруги"<<endl<<"4 - дети"<<endl<<"5 дата рождения"<<endl<<"6 - дата смерти"<<endl<<"7 - возраст"<<endl;
+            unsigned short j = cin.get();
+            switch (j) {
+                case 1:{
+                    <#statements#>
+                    break;
+                }
+                case 2:{
+                    <#statements#>
+                    break;
+                }
+                case 3:{
+                    <#statements#>
+                    break;
+                }
+                case 4:{
+                    <#statements#>
+                    break;
+                }
+                case 5:{
+                    <#statements#>
+                    break;
+                }
+                case 6:{
+                    <#statements#>
+                    break;
+                }
+                case 7:{
+                    <#statements#>
+                    break;
+                }
+                default:
+                    break;
+            break;
         }
-        if(key_fiels.compare("fio")||key_fiels.compare("FIO") || key_fiels.compare("Fio")){
-            
+            break;
         }
-        if(key_fiels.compare("fio")||key_fiels.compare("FIO") || key_fiels.compare("Fio")){
-            
+        case 3:{
+            cout<<"Какое поле хотите изменить?"<<endl<<"1 - ФИО"<<endl<<"2 - родители"<<endl<<"3 - супруги"<<endl<<"4 - дети"<<endl<<"5 дата рождения"<<endl<<"6 - дата смерти"<<endl<<"7 - возраст"<<endl;
+            unsigned short j = cin.get();
+            switch (j) {
+                case 1:{
+                    <#statements#>
+                    break;
+                }
+                case 2:{
+                    <#statements#>
+                    break;
+                }
+                case 3:{
+                    <#statements#>
+                    break;
+                }
+                case 4:{
+                    <#statements#>
+                    break;
+                }
+                case 5:{
+                    <#statements#>
+                    break;
+                }
+                case 6:{
+                    <#statements#>
+                    break;
+                }
+                case 7:{
+                    <#statements#>
+                    break;
+                }
+                default:
+                    break;
         }
-        if(key_fiels.compare("fio")||key_fiels.compare("FIO") || key_fiels.compare("Fio")){
-            
+            break;
         }
-        if(key_fiels.compare("fio")||key_fiels.compare("FIO") || key_fiels.compare("Fio")){
-            
-        }
-        if(key_fiels.compare("fio")||key_fiels.compare("FIO") || key_fiels.compare("Fio")){
-            
-        }
-    }
-    if(type.compare("Grandparents") || type.compare("grandparents")){
-        
-    }
-    if(type.compare("Kids") || type.compare("Kids")){
-        
+        default:
+            break;
     }
 }

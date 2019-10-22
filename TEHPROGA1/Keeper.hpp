@@ -22,7 +22,7 @@ public:
     Keeper(string way_p,string way_g,string way_k){cont_p.readFromFile(way_p);cont_g.readFromFile(way_g);cont_k.readFromFile(way_k);}
     ~Keeper(){};
     
-    void editing (string key_field,string key,string type);
+    void editing ();
     void save(string way_p,string way_g,string way_k){cont_p.saveOnFile(way_p);cont_g.saveOnFile(way_g);cont_k.saveOnFile(way_k);}
     void read(string way_p,string way_g,string way_k){cont_p.readFromFile(way_p);cont_g.readFromFile(way_g);cont_k.readFromFile(way_k);}
     void addGrandparentAtIndex(int i , Grandparents obj){cont_g.addAtIndex(i,obj);}
