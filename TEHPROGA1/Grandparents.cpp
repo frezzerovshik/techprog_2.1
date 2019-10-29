@@ -8,13 +8,11 @@
 
 #include "Grandparents.hpp"
 Grandparents::Grandparents(){
-    cout<<"Constructor without parameters"<<endl;
-    cout<<"Class Grandparents"<<endl;
+     cout<<"Constructor called, class Grandparents"<<endl;
     type.append("0");
 }
 Grandparents::Grandparents(string _fio, string _parents,string _spouse,string _kids,string _birth,string _death,string _age,string _type){
-    cout<<"Constructor with paraeters"<<endl;
-    cout<<"Class Grandparents"<<endl;
+      cout<<"Constructor called, class Grandparents"<<endl;
     setFio(_fio);
     setParents(_parents);
     setSpouse(_spouse);
@@ -30,8 +28,7 @@ Grandparents::Grandparents(string _fio, string _parents,string _spouse,string _k
     }
 }
 Grandparents::Grandparents( Grandparents& init){
-    cout<<"Constructor of copying"<<endl;
-    cout<<"Class Grandparents"<<endl;
+      cout<<"Constructor called, class Grandparents"<<endl;
     setFio(*init.getFio());
     setParents(*init.getParents());
     setSpouse(*init.getSpouse());
@@ -47,6 +44,6 @@ Grandparents::Grandparents( Grandparents& init){
     }
 }
 Grandparents::~Grandparents(){
-    cout<<"Destructor called"<<endl<<"Class Grandparents"<<endl;
+     cout<<"Destructor called, class Grandparents"<<endl;
 }
 

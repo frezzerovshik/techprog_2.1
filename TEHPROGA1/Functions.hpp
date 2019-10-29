@@ -18,7 +18,7 @@ typedef struct TEMP_DATA{
     string death;
     string age;
 }TEMP_DATA;
-TEMP_DATA getDataFromKeyboard();
-string getTypeWithTempStruct(TEMP_DATA var);
+TEMP_DATA* getDataFromKeyboard();
+int getTypeWithTempStruct(TEMP_DATA var);
 int runtime();
 void printKeeper(Keeper& a);

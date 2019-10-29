@@ -9,13 +9,12 @@
 #include "Kids.hpp"
 
 Kids::Kids(){
-    cout<<"Constructor without parameters"<<endl;
-    cout<<"Class Kids"<<endl;
+  
+    cout<<"Constructor called, class Kids"<<endl;
     type.append("0");
 }
 Kids::Kids(string _fio, string _parents,string _spouse,string _kids,string _birth,string _death,string _age,string _type){
-    cout<<"Constructor with paraeters"<<endl;
-    cout<<"Class Kids"<<endl;
+  cout<<"Constructor called, class Kids"<<endl;
     setFio(_fio);
     setParents(_parents);
     setSpouse(_spouse);
@@ -31,8 +30,7 @@ Kids::Kids(string _fio, string _parents,string _spouse,string _kids,string _birt
     }
 }
 Kids::Kids( Kids& init){
-    cout<<"Constructor of copying"<<endl;
-    cout<<"Class Kids"<<endl;
+ cout<<"Constructor called, class Kids"<<endl;
     setFio(*init.getFio());
     setParents(*init.getParents());
     setSpouse(*init.getSpouse());
@@ -48,6 +46,6 @@ Kids::Kids( Kids& init){
     }
 }
 Kids::~Kids(){
-    cout<<"Destructor called"<<endl<<"Class Kids"<<endl;
+  cout<<"Destructor called, class Kids"<<endl;
 }
 

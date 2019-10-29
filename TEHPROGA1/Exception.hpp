@@ -8,10 +8,17 @@
 
 #pragma once
 #include <iostream>
+#include <fstream>
 using namespace std;
 class Exception{
+
+    
 public:
     Exception(){};
+    int existed_file(){
+        cout<<"Array is already exist"<<endl;
+        throw 5;
+    }
     int false_id_exc(){
         cout<<"Exception: false id"<<endl;
         throw 1;

@@ -21,7 +21,7 @@ public:
     Base (const Base& init){};
     Base(string _fio, string _parents,string _spouse,string _kids,string _birth,string _death,string _age){};
     virtual ~Base() {};
-    virtual void setType(string _temp) = 0;
+    virtual void setType(string *_temp) = 0;
     virtual void setFio(string _fio){fio = _fio;}
     virtual void setParents(string _parents){parents = _parents;}
     virtual void setSpouse(string _spouse){spouse = _spouse;};

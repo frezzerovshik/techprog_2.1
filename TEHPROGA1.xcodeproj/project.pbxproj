@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		324DEE292351F10B00DE12E6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 324DEE282351F10B00DE12E6 /* main.cpp */; };
 		324DEE3B2351F12A00DE12E6 /* Grandparents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 324DEE302351F12A00DE12E6 /* Grandparents.cpp */; };
-		324DEE3C2351F12A00DE12E6 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 324DEE342351F12A00DE12E6 /* Base.cpp */; };
 		324DEE3F2351F12A00DE12E6 /* Keeper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 324DEE392351F12A00DE12E6 /* Keeper.cpp */; };
 		324DEE452351F57D00DE12E6 /* Kids.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 324DEE432351F57D00DE12E6 /* Kids.cpp */; };
 		324DEE482351F59A00DE12E6 /* Parents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 324DEE462351F59A00DE12E6 /* Parents.cpp */; };
@@ -34,7 +33,6 @@
 		324DEE302351F12A00DE12E6 /* Grandparents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grandparents.cpp; sourceTree = "<group>"; };
 		324DEE312351F12A00DE12E6 /* Base.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Base.hpp; sourceTree = "<group>"; };
 		324DEE332351F12A00DE12E6 /* Grandparents.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Grandparents.hpp; sourceTree = "<group>"; };
-		324DEE342351F12A00DE12E6 /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
 		324DEE382351F12A00DE12E6 /* Keeper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Keeper.hpp; sourceTree = "<group>"; };
 		324DEE392351F12A00DE12E6 /* Keeper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Keeper.cpp; sourceTree = "<group>"; };
 		324DEE412351F22600DE12E6 /* Exception.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Exception.hpp; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 		32A243912359F8CC0095271F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				324DEE342351F12A00DE12E6 /* Base.cpp */,
 				324DEE312351F12A00DE12E6 /* Base.hpp */,
 				324DEE432351F57D00DE12E6 /* Kids.cpp */,
 				324DEE442351F57D00DE12E6 /* Kids.hpp */,
@@ -168,7 +165,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				324DEE3C2351F12A00DE12E6 /* Base.cpp in Sources */,
 				32A243952359FEF90095271F /* Functions.cpp in Sources */,
 				324DEE3B2351F12A00DE12E6 /* Grandparents.cpp in Sources */,
 				324DEE292351F10B00DE12E6 /* main.cpp in Sources */,

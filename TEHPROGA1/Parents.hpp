@@ -12,12 +12,13 @@
 class Parents:public Base{
     Exception MyException;
     string type;
+  
 public:
     Parents();
     Parents(string _fio, string _parents,string _spouse,string _kids,string _birth,string _death,string _age,string _type);
     Parents(Parents& init);
     ~Parents();
-    void setType(string _temp){type = _temp;}
+    void setType(string *_temp){type = *_temp;}
     void setFio(string _fio){Base::setFio(_fio);}
     void setParents(string _parents){Base::setParents(_parents);}
     void setSpouse(string _spouse){Base::setSpouse(_spouse);};
